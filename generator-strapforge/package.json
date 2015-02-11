@@ -1,39 +1,36 @@
 {
   "name": "generator-strapforge",
   "version": "0.1.0",
-  "description": "A website scaffolding generator with UX in mind",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "bower": "^1.3.12",
-    "gulp": "^3.8.10",
-    "gulp-uglify": "^1.1.0",
-    "yeoman-generator": "^0.17.7"
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "alexward1981/generator-strapforge",
+  "author": {
+    "name": "Alexander Ward",
+    "email": "alex.ward@volcaniccreations.com",
+    "url": "https://github.com/alexward1981"
   },
-  "devDependencies": {
-    "gulp-minify-css": "^0.4.5"
+  "engines": {
+    "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "script"
+    "router": "mocha"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alexward1981/strapforge.git"
-  },
-  "keywords": [
-    "yeoman-generator",
-    "gulp",
-    "bower",
-    "yeoman",
-    "yo",
-    "html5",
-    "css3",
-    "sass",
-    "MVC"
+  "files": [
+    "app"
   ],
-  "author": "Alexander Ward",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexward1981/strapforge/issues"
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
   },
-  "homepage": "https://github.com/alexward1981/strapforge"
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
 }

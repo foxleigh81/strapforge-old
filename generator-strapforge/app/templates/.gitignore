@@ -1,0 +1,9 @@
+*.sublime-project
+*.sublime-workspace
+*.DS_Store
+
+node_modules/
+bower_components/
+public/lib/*.*
+.sass-cache/
+.tmp/
