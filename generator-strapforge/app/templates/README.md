@@ -20,24 +20,35 @@ This is a pre-made website skeleton I have built to help me quickly and easily s
 
 ## The directory structure
 
-/ --
-  -- /public
-  ---- /app
-  ------ index.html
-  ---- /lib
-  ---- /static
-  ------ /css
-  ------ /fonts
-  ------ /images
-  ------ /scripts
-  -- /src
-  ---- /js
-  ---- /sass
-  .bowerrc
-  .gitignore
-  gulpfile.js
-  LICENSE
-  package.js
-  README.md
+    .
+    ├── public
+    │   └── app
+    │       ├── index.html
+    │   ├── lib
+    │   └── static
+    │       ├── css
+    │       ├── fonts
+    │       ├── images
+    │       └── scripts
+    ├── src
+    │   ├── js
+    │       ├── prod.js
+    │       └── dev.js
+    │   └── sass
+    │       ├── _variables.scss
+    │       ├── classes.scss
+    │       ├── custom.scss
+    │       ├── js.scss
+    │       ├── print.scss
+    │       ├── reset.scss
+    │       ├── responsive.scss
+    │       └── strapforge.scss
+    ├── .bowerrc
+    ├── .gitignore
+    ├── gulpfile.js
+    ├── LICENSE
+    ├── package.json
+    ├── bower.json
+    └── README.md
 
   Additional directories and files will be generated after running 'npm install' and 'bower install'.
