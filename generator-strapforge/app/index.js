@@ -16,6 +16,9 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the ' + chalk.red('Strapforge') + ' generator! We\'re still in alpha at the moment so please excuse bugs' 
     ));
 
+    this.log(chalk.yellow('This installer will set up a static website structure with jQuery and Modernizr installed.'));
+    this.log(chalk.blue('Let\'s set up a few options:'));
+    
     var prompts = [
       {
         name: 'appName',
