@@ -13,18 +13,37 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('Strapforge') + ' generator!'
+      'Welcome to the ' + chalk.red('Strapforge') + ' generator! We\'re still in alpha at the moment so please excuse bugs' 
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    var prompts = [
+      {
+        name: 'appName',
+        message: 'What is the name of your project?',
+        default: "My New App"
+      },
+      {
+        name: 'siteUrl',
+        message: 'What is the live URL of your project? (Don\'t forget the http://)',
+        default: "http://www.google.com"
+      },
+      {
+        name: 'siteLocale',
+        message: 'What is the location of your project in ISO format? (see http://is.gd/sJBhxf if you are unsure)',
+        default: "en_GB"
+      },
+      {
+        name: 'siteDescription',
+        message: 'How would you describe your project?',
+        default: "Description to be added later"
+      }
+    ];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.appName = props.appName;
+      this.siteUrl = props.siteUrl;
+      this.siteLocale = props.siteLocale;
+      this.siteDescription = props.siteDescription;
 
       done();
     }.bind(this));
@@ -67,10 +86,18 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('public'),
         this.destinationPath('public')
       );
+      this.mkdir("public/static/images");
       this.fs.copy(
         this.templatePath('src'),
         this.destinationPath('src')
       );
+      var context = {
+            site_name: this.appName,
+            site_url: this.siteUrl,
+            site_locale: this.siteLocale,
+            site_desc: this.siteDescription
+        };
+      this.template("_index.html", "public/index.html", context);
     }
   },
 
