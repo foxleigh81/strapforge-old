@@ -1,6 +1,24 @@
-# Strapforge
+# Strapforge v0.1.0
 
-This is a pre-made website skeleton I have built to help me quickly and easily set up new website projects.
+This is a website skeleton I have built to help me quickly and easily set up new website projects.
+
+## How do I use it?
+
+The easiest way to use Strapforge is to install it with Yeoman. If you already have it installed simple create a directory for your project and type:
+
+```bash
+  yo strapforge
+```
+
+If you don't have Yeoman, simply download this git repo and copy all of the files and folders from the /generator-strapforge/app/templates folder to the root of your project folder and then run the following terminal commands:
+
+```bash
+  npm install
+```
+
+```bash
+  bower install
+```
 
 ## What is in it
 
