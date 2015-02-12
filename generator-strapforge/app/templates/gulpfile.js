@@ -10,7 +10,7 @@ gulp.task('serve', function() {
     }
   });
 
-  gulp.watch(['*.html', 'static/css/**/*.css', 'static/scripts/**/*.js'], {cwd: 'public'}, reload);
+  gulp.watch(['*.html', 'static/css/**/*.css', 'static/scripts/**/*.js'], { cwd: 'public' }, reload);
 });
 
 gulp.task('jshint', function() {
