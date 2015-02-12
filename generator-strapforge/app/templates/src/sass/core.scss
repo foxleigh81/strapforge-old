@@ -1,7 +1,7 @@
 // This is the core file which all other files are compressed into. This file is then converted into a css file.
 
-@import "reset.scss";
 @import "_variables";
+@import "reset";
 @import "classes";
 @import "strapforge";
 @import "custom";

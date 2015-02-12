@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync');
-    compass    = require('gulp-compass'),
     concat     = require('gulp-concat'),
     imagemin   = require('gulp-imagemin'),
     plumber    = require('gulp-plumber'),
@@ -24,6 +23,8 @@ gulp.task('serve', function() {
       baseDir: 'public'
     }
   });
+  // Perform the site init 
+  gulp.start('styles', 'scripts', 'images')
 
   // Compile SASS
   gulp.watch('src/sass/**/*.scss', ['styles']);
@@ -38,8 +39,8 @@ gulp.task('serve', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src('src/sass/*.scss')
-    .pipe(sass({ style: 'expanded' }))
+  return sass('src/sass/core.scss', { style: 'expanded' })
+    .pipe(plumber())
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(concat('core.css'))
     .pipe(gulp.dest('public/static/css'))
@@ -51,6 +52,7 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src('src/js/**/*.js')
+    .pipe(plumber())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('core.js'))
@@ -67,9 +69,7 @@ gulp.task('images', function() {
         imgDst = 'public/static/images';
  
     return gulp.src(imgSrc)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
+        .pipe(plumber())
         .pipe(changed(imgDst))
         .pipe(imagemin())
         .pipe(gulp.dest(imgDst))
@@ -80,6 +80,6 @@ gulp.task('clean', function(cb) {
     del(['public/static/css', 'public/static/scripts', 'public/static/images'], cb)
 });
 
-gulp.task('custom', ['clean'] function() {
-  gulp.start('styles', 'scripts', 'images')
+gulp.task('custom', ['clean'], function() {
+  gulp.start('serve');
 });
