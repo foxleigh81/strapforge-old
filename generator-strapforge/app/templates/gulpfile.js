@@ -3,11 +3,12 @@ var gulp = require('gulp'),
     compass    = require('gulp-compass'),
     concat     = require('gulp-concat'),
     imagemin   = require('gulp-imagemin'),
+    plumber    = require('gulp-plumber'),
     jshint     = require('gulp-jshint'),
     notify     = require('gulp-notify'),
     stripDebug = require('gulp-strip-debug'),
     uglify     = require('gulp-uglify'),
-    reload = browserSync.reload;
+    reload     = browserSync.reload;
 
 // watch files for changes and reload
 gulp.task('serve', function() {
