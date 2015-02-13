@@ -35,7 +35,7 @@ gulp.task('serve', function() {
   // Optimise images
   gulp.watch('public/static/images/*.*', ['images']);
 
-  gulp.watch(['*.html', 'public/static/css/**/*.css', 'public/static/scripts/**/*.js'], { cwd: 'public' }, reload);
+  gulp.watch('*.html', { cwd: 'public' }, reload);
 });
 
 gulp.task('styles', function() {
@@ -47,6 +47,7 @@ gulp.task('styles', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('public/static/css'))
+    .pipe(reload({stream:true}))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -60,6 +61,7 @@ gulp.task('scripts', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('public/static/scripts'))
+    .pipe(reload({stream:true}))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
