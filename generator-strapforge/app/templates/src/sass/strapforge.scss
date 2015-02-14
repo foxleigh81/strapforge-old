@@ -7,14 +7,27 @@
 .for-print,
 .js .js-disabled { display: none; }
 
+a { color: $primary; }
+
 body {
     font-family: $fontFamily;
     color: $bodyColor;
 }
 
 header {
-
+    background-color: #424242;
 }
+
+nav li { 
+    display: inline-block;
+    margin-right: 1em 
+}
+
+h1 { 
+    font-size: 3em;
+    color: $primary-con; 
+}
+
 
 footer {
     padding: 1em;
