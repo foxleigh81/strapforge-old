@@ -18,23 +18,43 @@ header {
     background-color: #424242;
 }
 
-nav li { 
-    display: inline-block;
-    margin-right: 1em 
+nav {
+    padding: 1em; 
+    li { 
+        display: inline-block;
+        margin-right: 1em 
+    }
 }
 
 h1 { 
     font-size: 3em;
     color: $primary-con; 
+    padding: 1em 0.5em;
+}
+
+h2 { 
+    font-size: 2em; 
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+section { 
+    font-size: $baseFont;
+    padding:1em;
 }
 
 
 footer {
+    color: $primary-con;
     padding: 1em;
     font-size: $baseFont;
     background-color: #424242;
     overflow: hidden;
 
     li { display: inline-block; }
+
+    a { color: $primary-con; 
+        &:hover { text-decoration: underline; }
+    }
 }
 
