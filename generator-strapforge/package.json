@@ -1,6 +1,6 @@
 {
   "name": "generator-strapforge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A website scaffolding generator with UX in mind. Includes jQuery, Modernizr, gulp, livereload and a set of base files to work from",
   "license": "MIT",
   "main": "app/index.js",
