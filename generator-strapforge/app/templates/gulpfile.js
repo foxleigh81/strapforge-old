@@ -12,7 +12,11 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
     cache = require('gulp-cache'),
-    del = require('del');
+    cache = require('gulp-cache'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    jsonlint = require('gulp-json-lint'),
+    del = require('del'),
+    cmq = require('gulp-combine-media-queries');
 
 var reload     = browserSync.reload;
 
@@ -63,6 +67,15 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('public/static/scripts'))
     .pipe(reload({stream:true}))
     .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// combine media queries (Not done by default, should be called before deployment to production)
+gulp.task('cmq', function () {
+  gulp.src('public/static/css/*.css')
+    .pipe(cmq({
+      log: true
+    }))
+    .pipe(gulp.dest('public/static/css'));
 });
 
 // Compress and minify images to reduce their file size
