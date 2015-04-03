@@ -14,41 +14,63 @@ body {
     color: $bodyColor;
 }
 
+.wrapper {
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.main { 
+    flex:1;
+    background-color: #EEE;
+}
+
 header {
-    background-color: #424242;
+    background-color: $background;
+    padding: 1rem 0;
+
+    a {
+        background-color: $primary;
+        color: $primary-con;
+        padding:1rem;
+        border-radius: 1rem 1rem 0 1rem;
+
+        &:hover { background-color: darken($primary, 10%); }
+    }
 }
 
 nav {
-    padding: 1em; 
+    padding: 1rem; 
     li { 
+        font-size: 1.4rem;
         display: inline-block;
         margin-right: 1em 
     }
 }
 
 h1 { 
-    font-size: 3em;
-    color: $primary-con; 
-    padding: 1em 0.5em;
+    font-size: 3rem;
+    color: $primary; 
+    margin-bottom: 1rem;
 }
 
 h2 { 
-    font-size: 2em; 
+    font-size: 2rem; 
     font-weight: bold;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 }
 
 section { 
     font-size: $baseFont;
-    padding:1em;
+    padding:1rem;
 }
 
 
 footer {
     color: $primary-con;
-    padding: 1em;
+    padding: 1rem;
     font-size: $baseFont;
-    background-color: #424242;
+    background-color: #303030;
     overflow: hidden;
 
     li { display: inline-block; }

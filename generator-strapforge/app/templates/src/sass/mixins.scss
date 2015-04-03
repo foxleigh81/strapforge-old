@@ -1,0 +1,10 @@
+// Responsive
+@mixin media($type) {
+  @if $type == xxl { @media only screen and (min-width: 1440px) { @content; } }
+  @else if $type == xl { @media only screen and (min-width: 1180px) { @content; }}
+  @else if $type == l { @media only screen and (min-width: 1024px) { @content; }}
+  @else if $type == m { @media only screen and (min-width: 720px) { @content; }}
+  @else if $type == s { @media only screen and (min-width: 500px) { @content; }}
+  @else if $type == xs { @media only screen and (min-width: 410px) { @content; }}
+  @else if $type == xxs { @media only screen and (min-width: 320px) { @content; }}
+}
