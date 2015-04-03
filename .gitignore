@@ -1,9 +1,0 @@
-*.sublime-project
-*.sublime-workspace
-*.DS_Store
-
-/generator-strapforge/node_modules/
-/generator-strapforge/bower_components/
-/generator-strapforge/.sass-cache/
-/generator-strapforge/.tmp/
-/generator-strapforge/public/lib/*.*

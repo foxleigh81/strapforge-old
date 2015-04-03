@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
@@ -13,10 +13,10 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('Strapforge') + ' generator! We\'re still in alpha at the moment so please excuse bugs' 
+      'Welcome to the ' + chalk.red('Strapforge') + ' v0.1.2 generator! We\'re still in alpha at the moment so please excuse bugs' 
     ));
 
-    this.log(chalk.yellow('This installer will set up a static website structure with jQuery and Modernizr installed.'));
+    this.log(chalk.yellow('This installer will set up a static website structure with jQuery and Modernizr pre-installed.'));
     this.log(chalk.blue('Let\'s set up a few options:'));
     
     var prompts = [
@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend({
         name: 'siteDescription',
         message: 'How would you describe your project?',
         default: "Description to be added later"
-      }
+      },
     ];
 
     this.prompt(prompts, function (props) {
@@ -47,9 +47,9 @@ module.exports = yeoman.generators.Base.extend({
       this.siteUrl = props.siteUrl;
       this.siteLocale = props.siteLocale;
       this.siteDescription = props.siteDescription;
-
       done();
     }.bind(this));
+
   },
 
   writing: {

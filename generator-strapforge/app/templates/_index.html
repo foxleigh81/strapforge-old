@@ -30,27 +30,20 @@
     <script src="lib/modernizr/modernizr.js"></script>
 
     <!-- SEO tags -->
-    <title>Musdash</title>
-    <link rel="canonical" href="http://www.musdash.com/index.html" />
-    <meta name="description" content="Description to be added later" />
+    <title><%= site_name %></title>
+    <link rel="canonical" href="<%= site_url %>/index.html" />
+    <meta name="description" content="<%= site_desc %>" />
     <meta name="revisit-after" content="7 days">
     
     <!-- Facebook OpenGraph tags -->
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Musdash" />
-    <meta property="og:description" content="Description to be added later" />
-    <meta property="og:image" content="http://www.musdash.com/apple-touch-icon-152x152.png"/>
-    <meta property="og:url" content="http://www.musdash.com/index.html" />
-    <meta property="og:site_name" content="Musdash" />
+    <meta property="og:title" content="<%= site_name %>" />
+    <meta property="og:description" content="<%= site_desc %>" />
+    <meta property="og:image" content="<%= site_url %>/apple-touch-icon-152x152.png"/>
+    <meta property="og:url" content="<%= site_url %>/index.html" />
+    <meta property="og:site_name" content="<%= site_name %>" />
 
-    <!-- Twitter card tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
 </head>
 <body>
     <div class="wrapper">
@@ -64,7 +57,7 @@
                     <li><a href="">Link 5</a></li>
                 </ul>
             </nav>
-            <h1>Yo! Thanks for using Strapforge to get <strong>Musdash</strong> started!</h1>
+            <h1>Yo! Thanks for using Strapforge to get <strong><%= site_name %></strong> started!</h1>
         </header>
         <div class="main">
             <section class="section-1">
@@ -79,8 +72,7 @@
             <section class="section-3">
                 <h2>A few notes:</h2>
                 <ul>
-                    <li>I don't believe in BEM notation, so you won't find it in this project. My reasons are simply that I believe it creates uncessesary mark-up when you can achive the same result with a more orderly file my simply writing neat, semantic HTML.</li>
-                    <li>I haven't used a framework like Bootstrap or Foundation, this is for the exact same reason as above, the extra markup and bloat created should not be on a production site.</li>
+                    <li>I haven't used a framework like Bootstrap or Foundation, this is because I don't believe they are necessary nor should the extra markup and bloat created by them make it to a production site.</li>
                     <li>I haven't used an off-the-shelf gridsystem. This is because I've written my own flexible grid-system using FlexBox. It even has fallbacks in place so that it should work nicely in browsers as early as IE8!</li>
                 </ul>
             </section>
